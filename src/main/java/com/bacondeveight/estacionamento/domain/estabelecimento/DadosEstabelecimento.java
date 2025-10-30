@@ -4,7 +4,6 @@ import com.bacondeveight.estacionamento.domain.endereco.DadosEndereco;
 import com.bacondeveight.estacionamento.domain.endereco.Endereco;
 
 public record DadosEstabelecimento(
-        Long id,
         String nome,
         String cnpj,
         DadosEndereco endereco,

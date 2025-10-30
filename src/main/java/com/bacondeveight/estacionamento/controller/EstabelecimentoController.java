@@ -15,7 +15,7 @@ public class EstabelecimentoController {
     private EstabelecimentoRepository repository;
     @PostMapping
     @Transactional
-    public ResponseEntity cadastrar(@RequestBody DadosEstabelecimento cadastroDto) {
+    public ResponseEntity<Estabelecimento> cadastrar(@RequestBody DadosEstabelecimento cadastroDto) {
         var estabelecimento = new Estabelecimento(cadastroDto);
         repository.save(estabelecimento);
 

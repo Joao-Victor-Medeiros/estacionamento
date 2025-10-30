@@ -9,6 +9,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("terminal")
 public class EstacionamentoController {
+    @PostMapping
+    public ResponseEntity inicializaTerminal() {
+        //criar logica de entrar pegar o horario final menos o inicial evou ter um intervalo de tempo, calcular o valor por hora
+        return ResponseEntity.ok("terminal inicializado");
+    }
+
 //    @PatchMapping
 //    public ResponseEntity entraVeiculo() {
 //        return ResponseEntity.ok("veículo autorizado");

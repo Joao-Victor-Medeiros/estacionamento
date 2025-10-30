@@ -15,6 +15,7 @@ import java.util.List;
 public class VeiculoController {
     @Autowired
     private VeiculoRepository repository;
+
     @PostMapping
     @Transactional
     public ResponseEntity cadastrar(@RequestBody DadosCadastroVeiculo cadastroDto) {
@@ -44,7 +45,7 @@ public class VeiculoController {
         if(repository.existsById(id)){
             this.repository.deleteById(id);
         }else {
-            throw new Exception("id do produto não encontrado");
+            throw new Exception("id do viculo não encontrado");
         }
 
         return ResponseEntity.noContent().build();

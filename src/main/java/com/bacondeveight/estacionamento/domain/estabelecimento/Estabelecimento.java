@@ -20,16 +20,16 @@ public class Estabelecimento {
     @Embedded
     private Endereco endereco;
     private String telefone;
-    private int qtdMotos;
-    private int qtdCarros;
+    private int qtdVagaMotos;
+    private int qtdVagaCarros;
 
     public Estabelecimento(DadosEstabelecimento estabelecimentoDto) {
         this.nome = estabelecimentoDto.nome();
         this.cnpj = estabelecimentoDto.cnpj();
         this.endereco = new Endereco(estabelecimentoDto.endereco());
         this.telefone = estabelecimentoDto.telefone();
-        this.qtdMotos = estabelecimentoDto.moto();
-        this.qtdCarros = estabelecimentoDto.carro();
+        this.qtdVagaMotos = estabelecimentoDto.moto();
+        this.qtdVagaCarros = estabelecimentoDto.carro();
     }
 
     public void atualizaEstabelecimento(DadosAtualizaEstabelecimento estabelecimento) {
@@ -38,8 +38,8 @@ public class Estabelecimento {
             this.cnpj = estabelecimento.cnpj();
             this.endereco = estabelecimento.endereco();
             this.telefone = estabelecimento.telefone();
-            this.qtdMotos = estabelecimento.qtdMoto();
-            this.qtdCarros = estabelecimento.qtdCarro();
+            this.qtdVagaMotos = estabelecimento.qtdMoto();
+            this.qtdVagaCarros = estabelecimento.qtdCarro();
         }
     }
 }

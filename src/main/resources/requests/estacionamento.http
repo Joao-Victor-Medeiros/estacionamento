@@ -1,0 +1,48 @@
+POST http://localhost:8080/estabelecimento
+Content-Type: application/json
+
+{
+  "nome": "Nome do Estabelecimento",
+  "cnpj": "00.000.000/0001-00",
+  "endereco": {
+    "logradouro": "Rua Exemplo",
+    "numero": "123",
+    "bairro": "Centro",
+    "cidade": "Cidade Exemplo",
+    "uf": "EX",
+    "complemento": "Apto 4B",
+    "cep": "00000-000"
+  },
+  "telefone": "(00) 00000-0000",
+  "moto": 10,
+  "carro": 50
+}
+
+### Listar estabelecimentos
+GET http://localhost:8080/estabelecimento
+
+### Atualizar estabelecimento
+PUT http://localhost:8080/estabelecimento
+Content-Type: application/json
+
+{
+  "id": 1,
+  "nome": "empresa ficticia",
+  "cnpj": "00.000.000/0001-00",
+  "endereco": {
+    "logradouro": "Rua Gonçalves Dias",
+    "numero": "151",
+    "bairro": "Centro",
+    "cidade": "sao sebastiao",
+    "uf": "DF",
+    "complemento": "Apto 4B",
+    "cep": "00000-000"
+  },
+  "telefone": "(61) 00000-0000",
+  "moto": 30,
+  "carro": 55
+}
+
+### Excluir estabelecimento
+DELETE http://localhost:8080/estabelecimento/2
+
