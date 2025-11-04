@@ -1,4 +1,4 @@
-POST http://localhost:8080/estabelecimento
+POST http://localhost:8080/estacionamento
 Content-Type: application/json
 
 {
@@ -19,10 +19,10 @@ Content-Type: application/json
 }
 
 ### Listar estabelecimentos
-GET http://localhost:8080/estabelecimento
+GET http://localhost:8080/estacionamento
 
-### Atualizar estabelecimento
-PUT http://localhost:8080/estabelecimento
+### Atualizar estacionamento
+PUT http://localhost:8080/estacionamento
 Content-Type: application/json
 
 {
@@ -43,6 +43,6 @@ Content-Type: application/json
   "carro": 55
 }
 
-### Excluir estabelecimento
-DELETE http://localhost:8080/estabelecimento/2
+### Excluir estacionamento
+DELETE http://localhost:8080/estacionamento/2
 

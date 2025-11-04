@@ -1,0 +1,41 @@
+# Requests para CRUD de Motorista
+
+### Cadastrar motorista
+POST http://localhost:8080/motorista
+Content-Type: application/json
+
+{
+  "nome": "João da Silva",
+  "telefone": "(11) 99999-0000",
+  "cnh": "12345678900",
+  "cartaoTargetPgto": {
+    "taget": "target-abc123",
+    "tipo": "MENSALISTA"
+  }
+}
+
+### Listar motoristas
+GET http://localhost:8080/motoristas
+
+### Detalhar motorista por id
+GET http://localhost:8080/motoristas/1
+
+### Atualizar motorista
+PUT http://localhost:8080/motoristas
+Content-Type: application/json
+
+{
+  "id": 1,
+  "nome": "João da Silva Atualizado",
+  "telefone": "(11) 98888-0000",
+  "cnh": "12345678900",
+  "cartaoTargetPgto": {
+    "id": 1,
+    "taget": "target-abc123-upd",
+    "tipo": "MENSALISTA"
+  }
+}
+
+### Excluir motorista
+DELETE http://localhost:8080/motoristas/1
+

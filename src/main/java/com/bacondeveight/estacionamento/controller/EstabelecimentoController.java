@@ -1,6 +1,6 @@
 package com.bacondeveight.estacionamento.controller;
 
-import com.bacondeveight.estacionamento.domain.estabelecimento.*;
+import com.bacondeveight.estacionamento.domain.estacionamento.*;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -12,29 +12,29 @@ import java.util.List;
 @RequestMapping("estabelecimento")
 public class EstabelecimentoController {
     @Autowired
-    private EstabelecimentoRepository repository;
+    private EstacionamentoRepository repository;
     @PostMapping
     @Transactional
-    public ResponseEntity<Estabelecimento> cadastrar(@RequestBody DadosEstabelecimento cadastroDto) {
-        var estabelecimento = new Estabelecimento(cadastroDto);
+    public ResponseEntity<Estacionamento> cadastrar(@RequestBody DadosEstacionamento cadastroDto) {
+        var estabelecimento = new Estacionamento(cadastroDto);
         repository.save(estabelecimento);
 
         return ResponseEntity.ok().build();
     }
 
     @GetMapping
-    public ResponseEntity<List<Estabelecimento>> listar(){
+    public ResponseEntity<List<Estacionamento>> listar(){
         var page = repository.findAll();
         return ResponseEntity.ok(page);
     }
 
     @PutMapping()
     @Transactional
-    public ResponseEntity<DetalhamentoEstacionamento> updateProduct(@RequestBody DadosAtualizaEstabelecimento estabelecimentoDto) {
-        Estabelecimento estabelecimento = repository.getReferenceById(estabelecimentoDto.id());
-        estabelecimento.atualizaEstabelecimento(estabelecimentoDto);
+    public ResponseEntity<DetalhamentoEstacionamento> updateProduct(@RequestBody DadosAtualizaEstacionamento estabelecimentoDto) {
+        Estacionamento estacionamento = repository.getReferenceById(estabelecimentoDto.id());
+        estacionamento.atualizaEstacionamento(estabelecimentoDto);
 
-        return ResponseEntity.ok(new DetalhamentoEstacionamento(estabelecimento));
+        return ResponseEntity.ok(new DetalhamentoEstacionamento(estacionamento));
     }
 
     @DeleteMapping("/{id}")

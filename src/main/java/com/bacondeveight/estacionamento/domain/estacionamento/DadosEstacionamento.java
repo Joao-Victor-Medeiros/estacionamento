@@ -1,9 +1,8 @@
-package com.bacondeveight.estacionamento.domain.estabelecimento;
+package com.bacondeveight.estacionamento.domain.estacionamento;
 
 import com.bacondeveight.estacionamento.domain.endereco.DadosEndereco;
-import com.bacondeveight.estacionamento.domain.endereco.Endereco;
 
-public record DadosEstabelecimento(
+public record DadosEstacionamento(
         String nome,
         String cnpj,
         DadosEndereco endereco,

@@ -1,0 +1,51 @@
+# Requests para CRUD de Cartão
+
+# Como executar individualmente (IntelliJ IDEA):
+# - Abra este arquivo no editor.
+# - Coloque o cursor na linha do request (por exemplo em "POST http://...") e pressione Ctrl+Enter (Windows/Linux) ou ⌘+Enter (macOS).
+# - Ou clique no ícone "Run" que aparece na margem esquerda (gutter) ao lado da linha do request.
+# Observação: o HTTP Client integrado está disponível no IntelliJ IDEA Ultimate. Se você estiver usando a edição Community, o botão de "Run" pode não aparecer — use curl, Postman ou a extensão REST Client no VS Code.
+
+### Cadastrar cartão
+POST http://localhost:8080/cartoes
+Content-Type: application/json
+
+{
+  "taget": "target-abc123",
+  "tipo": "MENSALISTA"
+}
+
+### Listar cartões
+GET http://localhost:8080/cartoes
+
+### Detalhar cartão por id
+GET http://localhost:8080/cartoes/1
+
+### Atualizar cartão
+PUT http://localhost:8080/cartoes
+Content-Type: application/json
+
+{
+  "id": 1,
+  "taget": "target-abc123-upd",
+  "tipo": "MENSALISTA"
+}
+
+### Excluir cartão
+DELETE http://localhost:8080/cartoes/1
+
+### Curl (alternativa se não houver botão Run)
+# Cadastrar:
+# curl -i -X POST http://localhost:8080/cartoes -H "Content-Type: application/json" -d "{\"taget\":\"target-abc123\",\"tipo\":\"MENSALISTA\"}"
+
+# Listar:
+# curl -i http://localhost:8080/cartoes
+
+# Detalhar:
+# curl -i http://localhost:8080/cartoes/1
+
+# Atualizar:
+# curl -i -X PUT http://localhost:8080/cartoes -H "Content-Type: application/json" -d "{\"id\":1,\"taget\":\"target-abc123-upd\",\"tipo\":\"MENSALISTA\"}"
+
+# Excluir:
+# curl -i -X DELETE http://localhost:8080/cartoes/1

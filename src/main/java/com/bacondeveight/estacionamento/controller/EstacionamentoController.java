@@ -1,7 +1,6 @@
 package com.bacondeveight.estacionamento.controller;
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("terminal")
 public class EstacionamentoController {
     @PostMapping
-    public ResponseEntity inicializaTerminal() {
+    public ResponseEntity verificaCartao() {
         //criar logica de entrar pegar o horario final menos o inicial evou ter um intervalo de tempo, calcular o valor por hora
         return ResponseEntity.ok("terminal inicializado");
     }

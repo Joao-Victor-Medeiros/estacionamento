@@ -1,12 +1,20 @@
 package com.bacondeveight.estacionamento.domain.motorista.cartao;
 
-import org.springframework.data.annotation.Id;
+import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@Entity
+@Table(name = "cartoes")
+@Data
+@NoArgsConstructor
 public class Cartao {
     @Id
-    private long id;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private Long id;
 
     private String taget;
 
+    @Enumerated(EnumType.STRING)
     private Tipo tipo;
 }

@@ -1,7 +1,12 @@
 package com.bacondeveight.estacionamento.domain.terminal;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
 public class TerminalService {
-    //responsável por fazer o acesso ao estabeleciemnto funcionar
+    @Autowired
+    private RegistryTerminalLogRepository terminalRepository;
 
     public void lerCartaoMotorista() {
         //verifica se é ou não assinante, se não for assinante vai pagar por hora
